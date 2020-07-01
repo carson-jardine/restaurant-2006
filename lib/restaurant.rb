@@ -14,6 +14,18 @@ class Restaurant
 
   def add_dish(dish)
     @dishes << dish
-  end 
+  end
+
+  def open_before_noon?
+    @opening_time.to_i <= 12
+  end
+
+  def menu_dish_names
+    names_uppercase = []
+    @dishes.each do |name|
+      names_uppercase << name.upcase
+    end
+    names_uppercase
+  end
 
 end
